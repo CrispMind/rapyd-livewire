@@ -13,7 +13,7 @@
 ])
 
 @php
-    if ($lazy) $bind = '.blur';
+    if ($lazy) $bind = '.lazy';
     else $bind = '';
     $wireModel = $attributes->whereStartsWith('wire:model')->first();
     $key = $attributes->get('name', $model ?? $wireModel);
