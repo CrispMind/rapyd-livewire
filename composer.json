@@ -1,11 +1,11 @@
 {
-    "name": "zofe/rapyd-livewire",
-    "description": "rapyd-livewire",
+    "name": "CrispMind/rapyd-livewire",
+    "description": "rapyd-livewire fork for Laravel 11 and Livewire 3",
     "keywords": [
         "zofe",
         "rapyd-livewire"
     ],
-    "homepage": "https://github.com/zofe/rapyd-livewire",
+    "homepage": "https://github.com/CrispMind/rapyd-livewire",
     "license": "MIT",
     "authors": [
         {
