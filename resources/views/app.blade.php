@@ -57,6 +57,5 @@
 @rapydScripts
 
 <script src="{{ asset('vendor/rapyd-livewire/bootstrap.js') }}" defer></script>
-<script src="{{ asset('vendor/rapyd-livewire/alpine.js') }}" defer></script>
 </body>
 </html>

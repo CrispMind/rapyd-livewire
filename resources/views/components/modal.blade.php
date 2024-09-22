@@ -25,7 +25,7 @@
     {{ $text }}
 </a>
 @endif
-<form @if($action)wire:submit.prevent="{{$action}}"@endif autocomplete="off">
+<form @if($action)wire:submit="{{$action}}"@endif autocomplete="off">
 <div wire:ignore.self class="modal fade" id="{{ $name }}Modal" tabindex="1" role="dialog" aria-labelledby="{{ $name }}ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-{{ $width }}" role="document">
         <div class="modal-content">

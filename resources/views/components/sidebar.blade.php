@@ -39,7 +39,7 @@
     </div>
     <div v-pre class="rpd-sidebar-toggler">
         <button x-data
-                @click.prevent="Livewire.emit('sidebar-toggle')"
+                @click.prevent="Livewire.dispatch('sidebar-toggle')"
                 class="navbar-toggler"
                 data-bs-toggle="collapse"
                 data-bs-target="#sidebar"

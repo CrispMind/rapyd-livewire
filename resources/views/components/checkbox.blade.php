@@ -9,8 +9,8 @@
 ])
 
 @php
-    if ($lazy) $bind = 'lazy';
-    else $bind = 'defer';
+    if ($lazy) $bind = '.blur';
+    else $bind = '';
     $wireModel = $attributes->whereStartsWith('wire:model')->first();
     $key = $attributes->get('name', $model ?? $wireModel);
     $id = $attributes->get('id', $model ?? $wireModel);
@@ -21,7 +21,7 @@
     ])->merge([
         'type' => 'checkbox',
         'id' => $id,
-        'wire:model.' . $bind => $model ? $prefix . $model : null,
+        'wire:model' . $bind => $model ? $prefix . $model : null,
     ]);
 @endphp
 

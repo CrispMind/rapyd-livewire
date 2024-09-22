@@ -15,9 +15,9 @@
 @php
     //$errors = $errors ?? session()->get('errors', new Illuminate\Support\MessageBag);
     $errors = isset($errors) ? $errors : session()->get('errors', new Illuminate\Support\MessageBag);
-    if ($debounce) $bind = 'debounce.' . (ctype_digit($debounce) ? $debounce : 150) . 'ms';
-    else if ($lazy) $bind = 'lazy';
-    else $bind = 'debounce.150ms';
+    if ($debounce) $bind = '.live.debounce.' . (ctype_digit($debounce) ? $debounce : 150) . 'ms';
+    else if ($lazy) $bind = '.blur';
+    else $bind = '.live.debounce.150ms';
     $wireModel = $attributes->whereStartsWith('wire:model')->first();
     $key = $attributes->get('name', $model ?? $wireModel);
     $id = $attributes->get('id', $model ?? $wireModel);
@@ -30,7 +30,7 @@
         'is-invalid' => optional($errors)->has($key),
     ])->merge([
         'id' => $id,
-        'wire:model.' . $bind => $model ? $prefix . $model : null,
+        'wire:model' . $bind => $model ? $prefix . $model : null,
     ]);
 @endphp
 

@@ -13,9 +13,9 @@
 ])
 
 @php
-    if ($debounce) $bind = 'debounce.' . (ctype_digit($debounce) ? $debounce : 150) . 'ms';
-    else if ($lazy) $bind = 'lazy';
-    else $bind = 'defer';
+    if ($debounce) $bind = '.live.debounce.' . (ctype_digit($debounce) ? $debounce : 150) . 'ms';
+    else if ($lazy) $bind = '.blur';
+    else $bind = '';
     $wireModel = $attributes->whereStartsWith('wire:model')->first();
     $key = $attributes->get('name', $model ?? $wireModel);
     $id = $attributes->get('id', $model ?? $wireModel);
@@ -28,7 +28,7 @@
     ])->merge([
         'id' => $id,
         'rows' => $rows,
-        'wire:model.' . $bind => $model ? $prefix . $model : null,
+        'wire:model' . $bind => $model ? $prefix . $model : null,
     ]);
 @endphp
 

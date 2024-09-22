@@ -49,7 +49,7 @@ class RapydServiceProvider extends ServiceProvider
         Blade::directive('rapydScripts', function () {
             $scripts = '<script src="{{ asset(\'vendor/rapyd-livewire/rapyd.js\') }}" defer></script>'."\n";
             $scripts .= "<?php echo \$__env->yieldPushContent('rapyd_scripts'); ?>\n";
-            $scripts .= '{!! \Livewire\Livewire::mount(\'rpd-app\')->html(); !!}'."\n";
+            $scripts .= '{!! \Livewire\Livewire::mount(\'rpd-app\') !!}'."\n";
 
             return $scripts;
         });
@@ -65,11 +65,8 @@ class RapydServiceProvider extends ServiceProvider
 
             $scripts .= '{!! \Livewire\Livewire::scripts('.$expression.') !!}'."\n";
             $scripts .= "<?php echo \$__env->yieldPushContent('rapyd_scripts'); ?>\n";
-            $scripts .= '{!! \Livewire\Livewire::mount(\'rpd-app\')->html(); !!}'."\n";
+            $scripts .= '{!! \Livewire\Livewire::mount(\'rpd-app\'); !!}'."\n";
             $scripts .= '<script src="{{ asset(\'vendor/rapyd-livewire/rapyd.js\') }}"></script>'."\n";
-            if (in_array('alpine', config('rapyd-livewire.include_scripts'))) {
-                $scripts .= '<script src="{{ asset(\'vendor/rapyd-livewire/alpine.js\') }}" defer></script>' . "\n";
-            }
             if (in_array('bootstrap', config('rapyd-livewire.include_scripts'))) {
                 $scripts .= '<script src="{{ asset(\'vendor/rapyd-livewire/bootstrap.js\') }}" defer></script>'."\n";
             }

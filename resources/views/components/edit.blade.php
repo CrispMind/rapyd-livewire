@@ -19,7 +19,7 @@
         </div>
     </form>
 
-    <form wire:submit.prevent="{{ $action }}" autocomplete="off">
+    <form wire:submit="{{ $action }}" autocomplete="off">
         <div>
             {{ $slot }}
         </div>

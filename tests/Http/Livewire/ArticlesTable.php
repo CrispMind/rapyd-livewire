@@ -6,7 +6,7 @@ use Livewire\Component;
 
 use Zofe\Rapyd\Tests\Models\Article;
 use Zofe\Rapyd\Tests\Models\Author;
-use Zofe\Rapyd\Traits\WithDataTable;
+use App\Livewire\Traits\WithDataTable;
 
 class ArticlesTable extends Component
 {
